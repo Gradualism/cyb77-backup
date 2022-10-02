@@ -19,7 +19,14 @@ def backup():
     print(f"Source: {source}\nDestination: {destination}")
 
     target_dir = shutil.copytree(source, destination, dirs_exist_ok=True)
+    print(f"Backup raw folder size: {get_dir_size(target_dir)}")
     print("Done.")
+
+
+def get_dir_size(target) -> str:
+    raw_size: int = sum(p.stat().st_size for p in Path(target).rglob('*'))
+    raw_size /= 1024
+    return f"{raw_size:.1f}M"
 
 
 backup()
