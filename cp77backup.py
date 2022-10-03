@@ -2,7 +2,6 @@ import shutil
 from datetime import date
 from pathlib import Path
 import os
-import zipfile
 
 
 def backup():
@@ -30,7 +29,3 @@ def get_dir_size(target) -> str:
 
 
 backup()
-
-
-# Save folder format 'Cyberpunk 2077_12_Jun_2022' as below maybe
-
